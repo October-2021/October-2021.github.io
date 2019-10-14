@@ -266,6 +266,92 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-2019-10-14-卡特兰数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/10/14/2019-10-14-卡特兰数/" class="article-date">
+      <time datetime="2019-10-14T07:20:39.000Z" itemprop="datePublished">2019-10-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/14/2019-10-14-卡特兰数/">卡特兰数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="卡特兰数总结"><a href="#卡特兰数总结" class="headerlink" title="卡特兰数总结"></a>卡特兰数总结</h1><p>考试考到自闭，发现自己对数学和推公式一窍不通</p>
+<h2 id="概念-建议先跳过"><a href="#概念-建议先跳过" class="headerlink" title="概念(建议先跳过)"></a>概念(建议先跳过)</h2><p>卡特兰数是一种经典的组合数,常出现在各种计数问题的数列（雾）</p>
+<p> 最常见的递推 $h(n) = h(0)  * h(n -  1) + h(1) * h(n -2) + … + h(n - 1) * h(0)$（$h(0) = h(1) = 1$)</p>
+<p>另类递推式$h(n) = h(n - 1) * (4 * n - 2)$</p>
+<p>通解$h(n) = C^n_{2n} - C^{n - 1}<em>{2n} ​$, 也可以写作$h(n) = C^n</em>{2n} / (n + 1)​$</p>
+<p>前几项为$1,  1, 2, 5, 14, 42, 132, 429, 1430, 4862…​$（懒得打了）</p>
+<p>这有什么用呢，光看公式我也不知道啊？从题目入手吧</p>
+<h2 id="进出栈顺序"><a href="#进出栈顺序" class="headerlink" title="进出栈顺序"></a>进出栈顺序</h2><h3 id="递归公式"><a href="#递归公式" class="headerlink" title="递归公式"></a>递归公式</h3><p>假设有$n$个小球，每个小球互不相同，问有多少种<strong>进出栈</strong>的顺序(进栈的顺序为$1- n$)</p>
+<p>首先，进栈的顺序已经<strong>确定</strong>，出栈的顺序是<strong>不定</strong>的，所以每一个数都有可能<strong>最后</strong>再出栈（好好理解一下）</p>
+<p>比如一共有5个数，我想让第3个最后出栈，只需要先让1,2进栈,出栈，然后让3入栈，再把4,5进栈出栈就行了</p>
+<p><strong>最后</strong>出栈的数为$k$ 那么显然前$k - 1$个数已经完成了进栈出栈，后$n - k$个数显然也完成了进栈出栈  </p>
+<p>显然我们已经把问题缩小了范围，此时$f(k) = f(k - 1) * f(n - k)​$ </p>
+<p>显然我们每一个数都有可能最后再出栈， 而且出栈最后的一个数不同出栈的顺序一定不同，所以开头的递推方程式就写出来了</p>
+<h3 id="通解"><a href="#通解" class="headerlink" title="通解"></a>通解</h3><p>我们可以用折线法来解决这一问题</p>
+<p>n个小球，每一次进栈出栈，我们显然一共要进行2n次操作，把问题放在坐标系上；</p>
+<p><img src="https://i.loli.net/2019/10/14/URutVhnj8ZAYp9a.png" alt></p>
+<p>我们可以把一次入栈当做向右上方走，一次出栈当做往右下方，但是显然，没有入栈就出栈是不行的</p>
+<p>所以我们可以用总数减去非法数</p>
+<p>总数 $C^n_{2n}$（从·2n次操作中任取n次操作入栈）</p>
+<p>非法数的计算方法是，如果过程非法， 那么一定会碰到$y = -1​$这条线</p>
+<p>取第一次到达$y = -1$的点，在它之后的折线关于$y = -1$做对称，最后的那个点一定会到达(2n, -2)，所以不合法的情况就是$C^{n - 1}_{2n}$</p>
+<p>剩余两步去哪了呢？</p>
+<p>详细解释一下，我们之后取折线改变的是将一个入栈操作改为了出栈操作，而且是任意一步。并没有改变组合数随机取的性质</p>
+<p>假设我们取完对称后还有$k$次操作,那么毫无疑问,入栈比出栈次数多1，根据$C^m_n = C^{n - m}_n$</p>
+<p>我们将它变为出栈次数比入栈次数多1，反过来，如果出栈比入栈多2，一定满足一个到达了$y = -1$，还有一个是我们手动翻的啦</p>
+<p>通解就推出来啦</p>
+<p><strong>日常咕咕咕，以后会再补充一些其它东西</strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-2019-10-14-博客搬迁公告" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
