@@ -266,6 +266,87 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-浅谈对抗搜索和A-B剪枝" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/10/22/浅谈对抗搜索和A-B剪枝/" class="article-date">
+      <time datetime="2019-10-22T14:03:39.000Z" itemprop="datePublished">2019-10-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/22/浅谈对抗搜索和A-B剪枝/">对抗搜索和A-B剪枝</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="浅谈对抗搜索和-A-B-剪枝"><a href="#浅谈对抗搜索和-A-B-剪枝" class="headerlink" title="浅谈对抗搜索和$A-B$剪枝"></a>浅谈对抗搜索和$A-B$剪枝</h1><p><del>阿尔法和贝塔怎么打啊呜呜呜</del></p>
+<p>名字特别霸气，道理还是很浅显易懂的</p>
+<p><a href="https://www.cnblogs.com/chenxiaoran666/p/AlphaBetaDFS.html#%E5%90%8E%E8%AE%B0" target="_blank" rel="noopener">来自于dalao博客</a> （版权意识薄弱，若有不妥多多包涵）</p>
+<p>本文只介绍一些概念之类的东西，如果想要更好的理解 $or​$模拟推荐看看 <a href="https://blog.csdn.net/UFv59to8/article/details/79331675" target="_blank" rel="noopener">这个博客</a></p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><p>在一些博弈论题目中，如果决策双方获胜条件是截然相反的，这时候我们就可以用对抗搜素算法（雾）</p>
+<p>一些求最优解问题也可以的，双方最优解条件相反即可（可以理解为自己拼命的想要取到最优但是对手一直在捣乱）</p>
+<h2 id="主要思想"><a href="#主要思想" class="headerlink" title="主要思想"></a>主要思想</h2><p>遍历一遍博弈树。。。普通爆搜？ 但是我们可以针对双方，相反这两个特殊条件进行优化</p>
+<p>优化有记忆化搜索和 $Alpha−Beta​$剪枝两种</p>
+<p>记忆化搜索就不说的，这玩意太常见了。。。</p>
+<p>那么，开始我们的正题</p>
+<h3 id="Alpha-Beta-剪枝"><a href="#Alpha-Beta-剪枝" class="headerlink" title="$Alpha - Beta$剪枝"></a>$Alpha - Beta$剪枝</h3><p>对抗搜索的一种比较巧妙的优化吧。其实思想特别简单，这里直接说一下吧</p>
+<p>比如说当前我们要取<strong>最大值</strong>， 那么，我们的儿子显然要取<strong>最小值</strong>（搜索树搜索的是状态）</p>
+<p>我们的一个儿子搜完了，传过来的值是$3$，我们要搜另一个儿子，这个儿子开始往下搜</p>
+<p>然后，这个儿子搜到了一个小于$3​$ 的数，因为儿子要取<strong>最小值</strong>，儿子很高兴的更新为了这个小于$3​$的数，然后继续往下搜。。。</p>
+<p>且慢，既然当前儿子已经确定选的数一定<strong>小于$3​$</strong>,我们已经没有必要继续搜下去了</p>
+<p><strong>因为我们根本就不会取到这个儿子</strong>，取上一个值为$3$的儿子显然更优</p>
+<p>好了，思想讲完了，真的是一个非常好懂的东西，但是在实际的应用中往往能起到很大的作用</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><ul>
+<li>现在正在做的 <a href="https://www.luogu.org/problem/P4363" target="_blank" rel="noopener">[九省联考2018]一双木棋<strong>chess</strong></a></li>
+</ul>
+<p>其他的以后在进行补充</p>
+<p>好了，<del>就这样又水完了一篇博客</del></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-高斯消元" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
