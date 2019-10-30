@@ -19,7 +19,7 @@
 <meta property="og:description" content="关于主席树的一些总结前言学主席树其实已经有一段时间了，之前一直认为自己理解了，也没有写博客总结。在一段时间后看到了可持久化tire树后想总结他们的不同时，才发现自己并不算太理解主席树（关于它们的不同将在tire树总结处有介绍） 这篇博文偏基础，里面有很多我对于主席树的理解，如果有错误欢迎指正，有见解也欢迎提出，蒟蒻感激不尽">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/10/13/5lH4miUkRzePqfy.png">
-<meta property="og:updated_time" content="2019-10-13T14:01:56.686Z">
+<meta property="og:updated_time" content="2019-10-30T11:58:54.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="主席树">
 <meta name="twitter:description" content="关于主席树的一些总结前言学主席树其实已经有一段时间了，之前一直认为自己理解了，也没有写博客总结。在一段时间后看到了可持久化tire树后想总结他们的不同时，才发现自己并不算太理解主席树（关于它们的不同将在tire树总结处有介绍） 这篇博文偏基础，里面有很多我对于主席树的理解，如果有错误欢迎指正，有见解也欢迎提出，蒟蒻感激不尽">
@@ -361,7 +361,7 @@
 <li>主席树并不是一个什么难的数据结构，主要在于权值线段树和前缀思想的应用</li>
 <li>主席树其实就是n棵权值线段树，就是用一些特殊手段使得空间和时间开销不是那么大（可以这么理解）</li>
 <li>不要认为有了主席树时权值线段树一无是处，线段树合并主席树时是做不到的，有时候必须要建很多权值线段树</li>
-<li>主席树很难修改因为最坏的情况下一次要修改n棵树，需要用到标记永久化（以后会补充）</li>
+<li>主席树很难修改因为最坏的情况下一次要修改n棵树，需要用到树套树（以后会补充）</li>
 </ul>
 <p>那么，就先写到这里，以后会逐渐补充一些进阶知识和应用，如果有帮助，不妨关注一下我的博客</p>
 
@@ -375,7 +375,7 @@
         <p><span>本文标题:</span><a href="/2019/10/12/关于主席树的一些总结/">主席树</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">October</a></p>
         <p><span>发布时间:</span>2019-10-12, 22:03:39</p>
-        <p><span>最后更新:</span>2019-10-13, 22:01:56</p>
+        <p><span>最后更新:</span>2019-10-30, 19:58:54</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/10/12/关于主席树的一些总结/" title="主席树">http://October-2021.github.io/2019/10/12/关于主席树的一些总结/</a>
             <span class="copy-path" data-clipboard-text="原文: http://October-2021.github.io/2019/10/12/关于主席树的一些总结/　　作者: October" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -481,7 +481,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/22/浅谈对抗搜索和A-B剪枝/">对抗搜索和A-B剪枝</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/18/高斯消元/">高斯消元</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/15/2019-10-15-线段树合并/">线段树合并</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/14/2019-10-14-卡特兰数/">卡特兰数</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/14/2019-10-14-博客搬迁公告/">博客搬迁公告</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/我的第一篇博客文章/">我的第一篇博客文章</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/关于主席树的一些总结/">主席树</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/1000/10/12/日记（雾）/">日记（雾）</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/30/2019-10-30-差分约束学习笔记/">差分约束学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/22/浅谈对抗搜索和A-B剪枝/">对抗搜索和A-B剪枝</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/18/高斯消元/">高斯消元</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/15/2019-10-15-线段树合并/">线段树合并</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/14/2019-10-14-卡特兰数/">卡特兰数</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/14/2019-10-14-博客搬迁公告/">博客搬迁公告</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/我的第一篇博客文章/">我的第一篇博客文章</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/关于主席树的一些总结/">主席树</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/1000/10/12/日记（雾）/">日记（雾）</a></li></ul>
 
 
 
